@@ -12,6 +12,7 @@ test('renders the BookingForm heading', () => {
   render(<BookingForm {...defaultProps} />);
 
   expect(screen.getByText('BookingForm')).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /make your reservation/i })).toBeInTheDocument();
 });
 
 test('dispatches a date change with the selected date', () => {

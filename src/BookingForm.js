@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function BookingForm({ availableTimes, bookedTimes, dispatchAvailableTimes, onSubmit }) {
   const [formData, setFormData] = useState({
@@ -7,6 +7,13 @@ function BookingForm({ availableTimes, bookedTimes, dispatchAvailableTimes, onSu
     guests: '2',
     occasion: 'Birthday',
   });
+
+  useEffect(() => {
+    setFormData((currentData) => ({
+      ...currentData,
+      time: availableTimes.includes(currentData.time) ? currentData.time : availableTimes[0] || '',
+    }));
+  }, [availableTimes]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -80,7 +87,7 @@ function BookingForm({ availableTimes, bookedTimes, dispatchAvailableTimes, onSu
         <option>Anniversary</option>
       </select>
 
-      <button className="button primary-button" type="submit">Book Now</button>
+      <button className="button primary-button" type="submit">Make Your reservation</button>
 
       {bookedTimes.length > 0 && (
         <p className="booking-feedback">Latest booking added to booked times.</p>

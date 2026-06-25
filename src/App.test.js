@@ -2,6 +2,9 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders the Little Lemon homepage and routes to booking', () => {
+  window.fetchAPI = jest.fn(() => ['17:00', '18:00', '19:00']);
+  window.submitAPI = jest.fn(() => true);
+
   render(<App />);
 
   expect(screen.getByRole('navigation', { name: /primary navigation/i })).toBeInTheDocument();
@@ -27,7 +30,16 @@ test('renders the Little Lemon homepage and routes to booking', () => {
   fireEvent.change(screen.getByLabelText(/choose time/i), {
     target: { value: '17:00' },
   });
-  fireEvent.click(screen.getByRole('button', { name: /book now/i }));
+  fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
 
-  expect(screen.getAllByText('17:00')).toHaveLength(1);
+  expect(window.submitAPI).toHaveBeenCalledWith(
+    expect.objectContaining({
+      date: '2026-07-04',
+      time: '17:00',
+    })
+  );
+  expect(screen.getByRole('heading', { name: /your reservation is confirmed/i })).toBeInTheDocument();
+
+  delete window.fetchAPI;
+  delete window.submitAPI;
 });

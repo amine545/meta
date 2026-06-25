@@ -430,6 +430,10 @@ a {
   font-weight: 700;
 }
 
+.confirmation-content .button {
+  margin-top: 28px;
+}
+
 .booking-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
