@@ -1,16 +1,21 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders the Little Lemon homepage mockup', () => {
+test('renders the Little Lemon homepage and routes to booking', () => {
   render(<App />);
 
   expect(screen.getByRole('navigation', { name: /primary navigation/i })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: /little lemon/i })).toBeInTheDocument();
+  expect(screen.getAllByRole('heading', { name: /little lemon/i })[0]).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /reserve a table/i })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /this weeks specials/i })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /greek salad/i })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /bruschetta/i })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /lemon dessert/i })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /testimonials/i })).toBeInTheDocument();
   expect(screen.getByRole('contentinfo')).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /contact/i })).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole('link', { name: /reserve a table/i }));
+
+  expect(screen.getByRole('heading', { name: /reserve a table/i })).toBeInTheDocument();
 });
