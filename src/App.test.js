@@ -18,4 +18,16 @@ test('renders the Little Lemon homepage and routes to booking', () => {
   fireEvent.click(screen.getByRole('link', { name: /reserve a table/i }));
 
   expect(screen.getByRole('heading', { name: /reserve a table/i })).toBeInTheDocument();
+  expect(screen.getByText('BookingForm')).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /available times/i })).toBeInTheDocument();
+
+  fireEvent.change(screen.getByLabelText(/choose date/i), {
+    target: { value: '2026-07-04' },
+  });
+  fireEvent.change(screen.getByLabelText(/choose time/i), {
+    target: { value: '17:00' },
+  });
+  fireEvent.click(screen.getByRole('button', { name: /book now/i }));
+
+  expect(screen.getAllByText('17:00')).toHaveLength(1);
 });

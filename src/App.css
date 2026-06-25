@@ -410,10 +410,6 @@ a {
   padding: 96px 0;
 }
 
-.booking-content {
-  max-width: 720px;
-}
-
 .booking-content .eyebrow {
   margin: 0 0 12px;
   color: var(--yellow);
@@ -432,6 +428,109 @@ a {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: 36px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.booking-form,
+.booking-slots {
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--dark);
+  padding: 28px;
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.18);
+}
+
+.booking-form {
+  display: grid;
+  gap: 14px;
+}
+
+.booking-form h2,
+.booking-slots h2 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 28px;
+}
+
+.booking-form label {
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  min-height: 46px;
+  border: 2px solid var(--light);
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--dark);
+  font: inherit;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: var(--yellow);
+  outline: 3px solid rgba(244, 206, 20, 0.32);
+}
+
+.booking-form button {
+  margin-top: 12px;
+  border: 0;
+  cursor: pointer;
+}
+
+.booking-feedback {
+  margin: 0;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.slot-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.booking-slots h3 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 18px;
+}
+
+.booking-slots ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-slot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 800;
+}
+
+.booking-slot.available {
+  background: var(--light);
+  color: var(--green);
+}
+
+.booking-slot.booked {
+  background: var(--peach);
+  color: var(--dark);
 }
 
 .site-footer {
@@ -522,7 +621,8 @@ a {
   }
 
   .testimonial-grid,
-  .chicago-content {
+  .chicago-content,
+  .booking-layout {
     grid-template-columns: 1fr;
   }
 
@@ -585,6 +685,10 @@ a {
   }
 
   .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-columns {
     grid-template-columns: 1fr;
   }
 }
