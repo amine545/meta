@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2900" viewBox="0 0 1440 2900">
+  <defs>
+    <style>
+      .label { font-family: Arial, sans-serif; fill: #111; }
+      .small { font-size: 24px; }
+      .body { font-size: 30px; }
+      .heading { font-size: 44px; font-weight: 700; }
+      .block { fill: #e6e6e6; stroke: #111; stroke-width: 2; }
+      .dark { fill: #c9c9c9; stroke: #111; stroke-width: 2; }
+      .card { fill: #f2f2f2; stroke: #111; stroke-width: 2; }
+      .button { fill: #d9d9d9; stroke: #111; stroke-width: 2; }
+      .line { stroke: #111; stroke-width: 2; }
+      .grid { fill: #f3f3f3; opacity: 0.75; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="2900" fill="#fff"/>
+  <rect x="135" y="0" width="70" height="2900" class="grid"/>
+  <rect x="235" y="0" width="70" height="2900" class="grid"/>
+  <rect x="335" y="0" width="70" height="2900" class="grid"/>
+  <rect x="435" y="0" width="70" height="2900" class="grid"/>
+  <rect x="535" y="0" width="70" height="2900" class="grid"/>
+  <rect x="635" y="0" width="70" height="2900" class="grid"/>
+  <rect x="735" y="0" width="70" height="2900" class="grid"/>
+  <rect x="835" y="0" width="70" height="2900" class="grid"/>
+  <rect x="935" y="0" width="70" height="2900" class="grid"/>
+  <rect x="1035" y="0" width="70" height="2900" class="grid"/>
+  <rect x="1135" y="0" width="70" height="2900" class="grid"/>
+  <rect x="1235" y="0" width="70" height="2900" class="grid"/>
+
+  <g id="navigation">
+    <rect x="135" y="0" width="1170" height="150" class="block"/>
+    <rect x="210" y="35" width="180" height="80" fill="#fff" stroke="#111" stroke-width="2"/>
+    <line x1="210" y1="35" x2="390" y2="115" class="line"/>
+    <line x1="390" y1="35" x2="210" y2="115" class="line"/>
+    <text x="450" y="88" class="label small">Home</text>
+    <text x="540" y="88" class="label small">About</text>
+    <text x="635" y="88" class="label small">Menu</text>
+    <text x="720" y="88" class="label small">Reservations</text>
+    <text x="905" y="88" class="label small">Order online</text>
+    <text x="1110" y="88" class="label small">Login</text>
+  </g>
+
+  <g id="hero">
+    <rect x="135" y="150" width="1170" height="430" class="dark"/>
+    <text x="230" y="270" class="label heading">Little Lemon</text>
+    <text x="230" y="320" class="label body">Chicago</text>
+    <text x="230" y="385" class="label small">Mediterranean food with fresh ingredients,</text>
+    <text x="230" y="420" class="label small">family recipes, and a relaxed neighborhood feel.</text>
+    <rect x="230" y="470" width="250" height="70" class="button"/>
+    <text x="282" y="515" class="label small">Reserve a Table</text>
+    <rect x="820" y="210" width="360" height="280" fill="#eee" stroke="#111" stroke-width="2"/>
+    <line x1="820" y1="210" x2="1180" y2="490" class="line"/>
+    <line x1="1180" y1="210" x2="820" y2="490" class="line"/>
+  </g>
+
+  <g id="highlights">
+    <rect x="135" y="580" width="1170" height="760" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="230" y="700" class="label heading">Specials</text>
+    <rect x="1010" y="640" width="220" height="70" class="button"/>
+    <text x="1060" y="685" class="label small">Online Menu</text>
+
+    <g transform="translate(230 790)">
+      <rect width="280" height="430" class="card"/>
+      <rect width="280" height="170" fill="#eee" stroke="#111" stroke-width="2"/>
+      <line x1="0" y1="0" x2="280" y2="170" class="line"/>
+      <line x1="280" y1="0" x2="0" y2="170" class="line"/>
+      <text x="25" y="225" class="label body">Greek Salad</text>
+      <text x="210" y="225" class="label small">$12.99</text>
+      <text x="25" y="280" class="label small">Dish description</text>
+      <text x="25" y="330" class="label small">Order delivery</text>
+    </g>
+    <g transform="translate(580 790)">
+      <rect width="280" height="430" class="card"/>
+      <rect width="280" height="170" fill="#eee" stroke="#111" stroke-width="2"/>
+      <line x1="0" y1="0" x2="280" y2="170" class="line"/>
+      <line x1="280" y1="0" x2="0" y2="170" class="line"/>
+      <text x="25" y="225" class="label body">Bruschetta</text>
+      <text x="210" y="225" class="label small">$5.99</text>
+      <text x="25" y="280" class="label small">Dish description</text>
+      <text x="25" y="330" class="label small">Order delivery</text>
+    </g>
+    <g transform="translate(930 790)">
+      <rect width="280" height="430" class="card"/>
+      <rect width="280" height="170" fill="#eee" stroke="#111" stroke-width="2"/>
+      <line x1="0" y1="0" x2="280" y2="170" class="line"/>
+      <line x1="280" y1="0" x2="0" y2="170" class="line"/>
+      <text x="25" y="225" class="label body">Lemon Dessert</text>
+      <text x="210" y="225" class="label small">$5.00</text>
+      <text x="25" y="280" class="label small">Dish description</text>
+      <text x="25" y="330" class="label small">Order delivery</text>
+    </g>
+    <text x="230" y="1280" class="label small">Horizontally scrollable specials list</text>
+  </g>
+
+  <g id="testimonials">
+    <rect x="135" y="1340" width="1170" height="560" class="dark"/>
+    <text x="590" y="1460" class="label heading">Testimonials</text>
+    <g transform="translate(230 1540)">
+      <rect width="230" height="230" class="card"/>
+      <text x="25" y="55" class="label small">Rating</text>
+      <rect x="25" y="80" width="70" height="70" fill="#eee" stroke="#111" stroke-width="2"/>
+      <line x1="25" y1="80" x2="95" y2="150" class="line"/>
+      <line x1="95" y1="80" x2="25" y2="150" class="line"/>
+      <text x="110" y="120" class="label small">Name</text>
+      <text x="25" y="185" class="label small">Review</text>
+    </g>
+    <g transform="translate(500 1540)">
+      <rect width="230" height="230" class="card"/>
+      <text x="25" y="55" class="label small">Rating</text>
+      <rect x="25" y="80" width="70" height="70" fill="#eee" stroke="#111" stroke-width="2"/>
+      <line x1="25" y1="80" x2="95" y2="150" class="line"/>
+      <line x1="95" y1="80" x2="25" y2="150" class="line"/>
+      <text x="110" y="120" class="label small">Name</text>
+      <text x="25" y="185" class="label small">Review</text>
+    </g>
+    <g transform="translate(770 1540)">
+      <rect width="230" height="230" class="card"/>
+      <text x="25" y="55" class="label small">Rating</text>
+      <rect x="25" y="80" width="70" height="70" fill="#eee" stroke="#111" stroke-width="2"/>
+      <line x1="25" y1="80" x2="95" y2="150" class="line"/>
+      <line x1="95" y1="80" x2="25" y2="150" class="line"/>
+      <text x="110" y="120" class="label small">Name</text>
+      <text x="25" y="185" class="label small">Review</text>
+    </g>
+    <g transform="translate(1040 1540)">
+      <rect width="230" height="230" class="card"/>
+      <text x="25" y="55" class="label small">Rating</text>
+      <rect x="25" y="80" width="70" height="70" fill="#eee" stroke="#111" stroke-width="2"/>
+      <line x1="25" y1="80" x2="95" y2="150" class="line"/>
+      <line x1="95" y1="80" x2="25" y2="150" class="line"/>
+      <text x="110" y="120" class="label small">Name</text>
+      <text x="25" y="185" class="label small">Review</text>
+    </g>
+  </g>
+
+  <g id="about">
+    <rect x="135" y="1900" width="1170" height="600" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="230" y="2060" class="label heading">Little Lemon</text>
+    <text x="230" y="2110" class="label body">Chicago</text>
+    <rect x="230" y="2170" width="430" height="190" fill="#eee" stroke="#111" stroke-width="2"/>
+    <text x="260" y="2245" class="label small">About text placeholder</text>
+    <rect x="820" y="2070" width="260" height="330" fill="#eee" stroke="#111" stroke-width="2"/>
+    <line x1="820" y1="2070" x2="1080" y2="2400" class="line"/>
+    <line x1="1080" y1="2070" x2="820" y2="2400" class="line"/>
+    <rect x="700" y="2210" width="260" height="330" fill="#eee" stroke="#111" stroke-width="2"/>
+    <line x1="700" y1="2210" x2="960" y2="2540" class="line"/>
+    <line x1="960" y1="2210" x2="700" y2="2540" class="line"/>
+  </g>
+
+  <g id="footer">
+    <rect x="135" y="2500" width="1170" height="400" class="dark"/>
+    <rect x="230" y="2590" width="160" height="220" fill="#eee" stroke="#111" stroke-width="2"/>
+    <line x1="230" y1="2590" x2="390" y2="2810" class="line"/>
+    <line x1="390" y1="2590" x2="230" y2="2810" class="line"/>
+    <text x="470" y="2605" class="label body">Doormat Navigation</text>
+    <text x="470" y="2660" class="label small">Home</text>
+    <text x="470" y="2700" class="label small">About</text>
+    <text x="470" y="2740" class="label small">Menu</text>
+    <text x="470" y="2780" class="label small">Reservations</text>
+    <text x="730" y="2605" class="label body">Contact</text>
+    <text x="730" y="2660" class="label small">Address</text>
+    <text x="730" y="2700" class="label small">Phone number</text>
+    <text x="730" y="2740" class="label small">Email</text>
+    <text x="1010" y="2605" class="label body">Social Media</text>
+    <text x="1010" y="2660" class="label small">Links</text>
+  </g>
+</svg>
