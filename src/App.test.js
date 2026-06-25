@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders homepage text', () => {
+test('selects an occasion from the dropdown', () => {
   render(<App />);
-  const homepageText = screen.getByText(/homepage/i);
-  expect(homepageText).toBeInTheDocument();
+  const dropdown = screen.getByRole('button', { name: /occasion/i });
+
+  fireEvent.click(dropdown);
+  fireEvent.click(screen.getByRole('option', { name: /birthday/i }));
+
+  expect(screen.getByRole('button', { name: /birthday/i })).toBeInTheDocument();
 });
