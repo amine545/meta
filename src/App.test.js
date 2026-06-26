@@ -30,7 +30,7 @@ test('renders the Little Lemon homepage and routes to booking', () => {
   fireEvent.change(screen.getByLabelText(/choose time/i), {
     target: { value: '17:00' },
   });
-  fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
+  fireEvent.click(screen.getByRole('button', { name: /on click/i }));
 
   expect(window.submitAPI).toHaveBeenCalledWith(
     expect.objectContaining({

@@ -1,5 +1,33 @@
 import { useEffect, useState } from 'react';
 
+const occasions = ['Birthday', 'Engagement', 'Anniversary'];
+
+export function validateDate(date) {
+  return Boolean(date);
+}
+
+export function validateTime(time, availableTimes) {
+  return availableTimes.includes(time);
+}
+
+export function validateGuests(guests) {
+  const guestCount = Number(guests);
+  return Number.isInteger(guestCount) && guestCount >= 1 && guestCount <= 10;
+}
+
+export function validateOccasion(occasion) {
+  return occasions.includes(occasion);
+}
+
+export function validateBookingForm(formData, availableTimes) {
+  return (
+    validateDate(formData.date) &&
+    validateTime(formData.time, availableTimes) &&
+    validateGuests(formData.guests) &&
+    validateOccasion(formData.occasion)
+  );
+}
+
 function BookingForm({ availableTimes, bookedTimes, dispatchAvailableTimes, onSubmit }) {
   const [formData, setFormData] = useState({
     date: '',
@@ -30,6 +58,11 @@ function BookingForm({ availableTimes, bookedTimes, dispatchAvailableTimes, onSu
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!validateBookingForm(formData, availableTimes)) {
+      return;
+    }
+
     onSubmit(formData);
     setFormData((currentData) => ({
       ...currentData,
@@ -82,12 +115,14 @@ function BookingForm({ availableTimes, bookedTimes, dispatchAvailableTimes, onSu
         value={formData.occasion}
         onChange={handleChange}
       >
-        <option>Birthday</option>
-        <option>Engagement</option>
-        <option>Anniversary</option>
+        {occasions.map((occasion) => (
+          <option key={occasion}>{occasion}</option>
+        ))}
       </select>
 
-      <button className="button primary-button" type="submit">Make Your reservation</button>
+      <button className="button primary-button" type="submit" aria-label="On Click">
+        Make Your reservation
+      </button>
 
       {bookedTimes.length > 0 && (
         <p className="booking-feedback">Latest booking added to booked times.</p>
